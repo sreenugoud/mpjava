@@ -1,0 +1,67 @@
+package com.mph.view;
+
+import java.util.Scanner;
+import com.mph.controller.EmployeeController;
+
+public class MainClass {
+	static int y = 20;
+	int z;// Anything in the class it has default values
+	byte b; // static variables can be created within class but declared as static
+	short s;
+	long l;
+	float f;
+	double d;
+	char c;
+	boolean a;
+
+	public static void main(String[] args) {
+		System.out.println("Welcome to java !!");
+		int x = 10;
+		System.out.println("x=" + x);
+		System.out.println("y=" + y);
+		// CLASS INSTANIATION
+		MainClass mc1 = new MainClass(); // MainClass mc1=object or instance variable & new Mainclass() is reference
+											// ,instance does not have name because it is a soul
+		System.out.println("z=" + mc1.z);
+		System.out.println(mc1);
+		// difference b/w object and reference
+		// System.out.println("z="+new MainClass().z);
+		// System.out.println("z="+new MainClass().z);
+		System.out.println(mc1.f + " " + mc1.s + " " + mc1.l + " " + mc1.f + " " + mc1.d + " " + mc1.c + " " + mc1.a);
+
+		// Employee emp =new Employee();
+		// emp.showDetails();
+		// emp.setEmpno(10);
+		// emp.setEname("Arun");
+		// System.out.println(emp.getEmpno() +" "+ emp.getEname());
+		EmployeeController ec = new EmployeeController();
+		Scanner sc = new Scanner(System.in);
+		String ch = null;
+		do {
+			System.out.println("Enter your choice:");
+			System.out.println("1. Add Emp");
+			System.out.println("2. View Emp");
+			int choice = sc.nextInt();
+			switch (choice) {
+			case 1: {
+				ec.addEmployee();
+				break;
+			}
+			case 2: {
+				ec.viewEmployee();
+				break;
+			}
+			default: {
+				System.out.println("choose the right choice ");
+			}
+
+			}
+
+			System.out.println("Do u want to continue? Y | y");
+			ch = sc.next();
+		} while (ch.equals("Y") || ch.equals("y"));
+		System.out.println("Thanks for using :)");
+		System.exit(0);
+
+	}
+}
