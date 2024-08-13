@@ -1,0 +1,27 @@
+package com.mph.controller;
+
+import java.util.Scanner;
+
+import com.mph.model.Employee;
+
+public class EmployeeController {
+	Employee emp;
+	Scanner sc = new Scanner(System.in);
+
+	public void addEmployee() {
+		System.out.println("Enter emp no");
+		int no = sc.nextInt();
+		System.out.println("Enter emp name");
+		String nam = sc.next();
+		// emp.setEmpno(no);
+		// emp.setEname(nam);
+		emp = new Employee(no, nam);
+		System.out.println("Employee Added Successfully");
+	}
+
+	public void viewEmployee() {
+		// System.out.println(emp.getEmpno() +" "+ emp.getEname());
+		System.out.println(emp);
+	}
+
+}
